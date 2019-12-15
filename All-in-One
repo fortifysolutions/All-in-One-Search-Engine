@@ -133,7 +133,7 @@ def wb():
     ecosia(s)
     swisscow(s)
     searchencrypt(s)
-    giga(s)
+    #giga(s)
     yandex(s)
     wiki(s)
     ccsearch(s)
