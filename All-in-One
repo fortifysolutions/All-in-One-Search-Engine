@@ -2,7 +2,7 @@ import os
 import time
 import sys
 import webbrowser
-import google
+
 
 def clr():
     if os.name == 'nt':
@@ -10,17 +10,6 @@ def clr():
     else:
         os.system('clear')
 
-def google1():
-    try:
-        from googlesearch import search
-    except ImportError:
-        print('Error')
-    i = input('Enter :')
-    for j in search(i, tld="co.in", num=10, stop=1, pause=2):
-        print(j)
-
-
-#google1()
 
 def main():
     print('''
