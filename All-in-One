@@ -129,7 +129,7 @@ def giga(s):
 
 
 def wb():
-    s = input('Enter your search content: ')
+    s = str(input('Enter your search content: '))
     google(s)
     bing(s)
     duckduckgo(s)
@@ -144,60 +144,61 @@ def wb():
     archive(s)
 
 
-
 def shopping():
     s = input('Enter content :')
     a1 = 'https://www.koovs.com/' + s
     a2 = 'https://paytmmall.com/shop/search?q=' + s + '&from=organic&child_site_id=6&site_id=2&category=6224'
     a3 = 'https://www.shoppersstop.com/search/?text=' + s
-    a4 = 'https://www.flipkart.com/search?q='+ s +'&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off'
+    a4 = 'https://www.flipkart.com/search?q=' + s + '&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off'
     a5 = 'https://www.shopclues.com/search?q=' + s + '&sc_z=&z=0&count=11'
     a6 = 'https://www.amazon.in/s?k=' + s + '&ref=nb_sb_noss_2'
     a7 = 'https://www.snapdeal.com/search?keyword=' + s + '&santizedKeyword=&catId=&categoryId=0&suggested=false&vertical=&noOfResults=20&searchState=&clickSrc=go_header&lastKeyword=&prodCatId=&changeBackToAll=false&foundInAll=false&categoryIdSearched=&cityPageUrl=&categoryUrl=&url=&utmContent=&dealDetail='
     a8 = 'https://www.tatacliq.com/search/?searchCategory=all&text=' + s
     a9 = 'https://www.jabong.com/find/' + s + '?tt=&rank=0'
     a10 = 'https://www.myntra.com/' + s
-   # webbrowser.open_new_tab(a1)
-   # webbrowser.open_new_tab(a2)
-    #webbrowser.open_new_tab(a3)
-    #webbrowser.open_new_tab(a4)
-    #webbrowser.open_new_tab(a5)
-    #webbrowser.open_new_tab(a6)
-    #webbrowser.open_new_tab(a7)
-    #webbrowser.open_new_tab(a8)
-    #webbrowser.open_new_tab(a9)
-    #webbrowser.open_new_tab(a10)
-    a = [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10]
-    for i in range(1,11):
+    # webbrowser.open_new_tab(a1)
+    # webbrowser.open_new_tab(a2)
+    # webbrowser.open_new_tab(a3)
+    # webbrowser.open_new_tab(a4)
+    # webbrowser.open_new_tab(a5)
+    # webbrowser.open_new_tab(a6)
+    # webbrowser.open_new_tab(a7)
+    # webbrowser.open_new_tab(a8)
+    # webbrowser.open_new_tab(a9)
+    # webbrowser.open_new_tab(a10)
+    a = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10]
+    for i in range(1, 11):
         webbrowser.open_new_tab(a[i])
 
+def start():
+    c = ['\033[1;31m', '\033[1;32m', '\033[1;33m', '\033[1;34m', '\033[1;35m', '\033[1;36m']
+    e = '\033[0m'
+    print(c[0])
+    print('FORTIFY', e, 'SOLUTIONS')
+    print(c[1], os.uname())
+    print(c[5], time.asctime())
+
+    print('''
+    Option:
+    [1] - Top Search Engine
+    [2] - Top 10 Online Shopping Website
+    ''')
+    while True:
+        try:
+            option = int(input('Option (1 or 2) :'))
+            if option == 1:
+                main()
+                wb()
+                break
+            elif option == 2:
+                # main()
+                shopping()
+                break
+        except ValueError:
+            print('Please enter valid input')
+
+    time.sleep(5)
+    clr()
 
 
-c = ['\033[31m', '\033[32m', '\033[33m', '\033[34m', '\033[35m', '\033[36m']
-e = '\033[0m'
-print(c[0])
-print('FORTIFY \033[0m SOLUTIONS')
-print(c[1], os.uname())
-print(c[5], time.asctime())
-
-print('''
-Option:
-[1] - Top Search Engine
-[2] - Top 10 Online Shopping Website
-''')
-while True:
-    try:
-        option = int(input('Option (1 or 2) :'))
-        if option == 1:
-            main()
-            wb()
-            break
-        elif option == 2:
-            #main()
-            shopping()
-            break
-    except ValueError:
-        print('Please enter valid input')
-print('Thank you, Have a Nice Time')
-time.sleep(5)
-clr()
+start()
